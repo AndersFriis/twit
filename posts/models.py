@@ -1,8 +1,15 @@
 from django.db import models
+from django.core.urlresolvers import reverse
 
-# Create your models here.
+class Post(models.Model):
+    name = models.CharField(max_length=140)
+    description = models.TextField(blank=True)
 
-class Post (models.Model):
-    title=models.CharField(max_length=200)
-    publish_date=models.DateTimeField(null=True, blank=True)
-    created=models.DateTimeField(auto_now_add=True)   
+    class Meta:
+        ordering = ['name']
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse('posts:index.html', args={'id': self.pk})
