@@ -5,7 +5,7 @@ from django.core.urlresolvers import reverse
 class Post(models.Model):
     name = models.CharField(max_length=140)
     description = models.TextField(blank=True)
-    # time = models.DateTimeField(auto_now_add=True)
+    time = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         ordering = ['name']
