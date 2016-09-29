@@ -5,5 +5,41 @@
 
 
 
+<form action="" method="POST">
+    <!-- put in django form logic, looks at matts example -->
+    {% csrf_token %}
+    {% for field in form %}
+        {% include "core/_form_input.html" %}
+    {% endfor %}
+    <button type="submit" class="btn btn-primary btn-block btn-sm">
+            Post
+    </button>
+    
+</form>
+
+<body style="background-color:powderblue;">
+
+
+<h2>
+Recent Posts
+</h2>
+
+<div class="panel-body"> 
+
+{% if posts %}
+
+{% for post in posts %} 
+
+<p>{{post.name}} {{post.description}} {{post.time}}</p>
+
+{% endfor %}
+
+{% else %}
+
+<P> No posts listed</P>   
+
+</div>
                         
-{% endblock content %}
+{% endif %}
+
+{% endblock %}
