@@ -24,7 +24,8 @@
     <div class="navbar-header">
       
       <a class="navbar-brand" href="#">
-      <img src="awesome_tweet.jpg" style="width:37px;height:37px;">  
+        <img src="{% static "core/awesome_tweet.jpg" %}" alt="logo"/>
+
       </a>
     </div>
 
@@ -32,7 +33,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         
-        <li><a href="#">Welcome to Twit</a></li>
+        <li><a>Welcome to Twit</a></li>
         <ul class="nav navbar-nav navbar-right">
             {% if request.user.is_authenticated %}
                 <li><a href="{# url 'accounts:logout' #}">Logout</a></li>

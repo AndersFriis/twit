@@ -30,7 +30,12 @@ Recent Posts
 
 {% for post in posts %} 
 
-<p>{{post.name}} {{post.description}} {{post.time}}</p>
+<p>{{post.name}}</p> 
+<p>{{post.description}}</p> 
+<p>{{post.time}}</p>
+<hr />
+
+
 
 {% endfor %}
 
@@ -39,6 +44,7 @@ Recent Posts
 <P> No posts listed</P>   
 
 </div>
+
                         
 {% endif %}
 
