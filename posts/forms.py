@@ -1,6 +1,7 @@
 from django import forms
 from .models import Post
 
+
 """forms.py is set up for the form on the webpage. So on the webpage you have a text box 
 and you put in your name and text and you hit submit.. 
 The textbox on the webpage is just used to create posts
@@ -14,4 +15,4 @@ class PostForm(forms.ModelForm):
 
     class Meta:
         model = Post
-        fields = ('name', 'description', )
+        fields = ( 'description', )

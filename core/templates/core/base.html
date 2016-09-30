@@ -23,8 +23,9 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       
-      <a class="navbar-brand" href="#">
-        <img src="{% static "core/awesome_tweet.jpg" %}" alt="logo"/>
+      <a class="navbar-brand">
+        {% load static %}
+        <img src="{% static 'core/awesome_tweet.jpg' %}" alt="logo" style="width:40px;height:40px;"/>
 
       </a>
     </div>
@@ -33,10 +34,10 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         
-        <li><a>Welcome to Twit</a></li>
+        <li><a style="color:lightblue;">Welcome to Twit</a></li>
         <ul class="nav navbar-nav navbar-right">
             {% if request.user.is_authenticated %}
-                <li><a href="{# url 'accounts:logout' #}">Logout</a></li>
+                <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
             {% else %}
                 <li><a href="{% url 'accounts:login' %}">Login</a></li>
                 <li><a href="{% url 'accounts:register' %}">Sign Up</a></li>

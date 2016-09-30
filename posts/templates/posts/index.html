@@ -1,10 +1,12 @@
 {% extends "core/base.html" %}
+{% load static %} 
 
 {% block content %}
-    
 
+  
+{% if request.user.is_authenticated %}
 
-
+<div class="container">
 <form action="" method="POST">
     <!-- put in django form logic, looks at matts example -->
     {% csrf_token %}
@@ -14,27 +16,48 @@
     <button type="submit" class="btn btn-primary btn-block btn-sm">
             Post
     </button>
-    
+</div>
+    </div>
+    </div>
 </form>
+</div>
 
-<body style="background-color:powderblue;">
+{% endif %}
 
 
-<h2>
-Recent Posts
-</h2>
 
-<div class="panel-body"> 
+<div class="container">
+<div class="col-md-3">
+
+<h2>Recent Users</h2>
+<div class="panel panel-default text-box">
+</div>
+
+{% for user in users %}
+<div class="panel-body">
+@{{user.username}}
+{{post.time}}
+</div>
+{% endfor %}
+
+</div>
+
+<div class="col-md-6">
+<div class="row">
+<h2>Recent Posts</h2>
 
 {% if posts %}
 
 {% for post in posts %} 
+<div class="panel panel-default text-box">
+<img src = "{% static 'core/user-image.jpg' %}" style="width:70px;height:70px;"/>
 
-<p>{{post.name}}</p> 
+<p><b>{{post.user.username}}</b></p> 
 <p>{{post.description}}</p> 
 <p>{{post.time}}</p>
-<hr />
 
+
+</div>
 
 
 {% endfor %}
@@ -45,7 +68,10 @@ Recent Posts
 
 </div>
 
-                        
+
 {% endif %}
+
+</body>
+
 
 {% endblock %}
