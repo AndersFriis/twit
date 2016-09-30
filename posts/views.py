@@ -24,7 +24,7 @@ def index(request):
     context = {
         "posts": posts,
         "form": form,
-        "users":users,
+        "users": users,
         
     }
     

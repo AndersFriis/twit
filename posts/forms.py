@@ -1,5 +1,6 @@
 from django import forms
 from .models import Post
+from core.forms import BootstrapFormMixin
 
 
 """forms.py is set up for the form on the webpage. So on the webpage you have a text box 
@@ -10,7 +11,7 @@ So it would look like this= from forms import Tweet
 Also remember to put in the form logic in your html
 
 """
-class PostForm(forms.ModelForm):
+class PostForm(BootstrapFormMixin, forms.ModelForm):
     
 
     class Meta:
