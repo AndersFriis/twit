@@ -1,1 +1,1 @@
-web: gunicorn bookworm.wsgi --log-file -
+web: gunicorn twit.wsgi --log-file -
