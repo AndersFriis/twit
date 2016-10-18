@@ -8,24 +8,23 @@
         {% endblock title %}
     </title>
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css">
 
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    
 
     <link rel="stylesheet" type="text/css" href="{% static 'core/styles.css' %}" />
 </head>
 
 
-
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       
       <a class="navbar-brand">
         {% load static %}
-        <img src="{% static 'core/awesome_tweet.jpg' %}" alt="logo" style="width:40px;height:40px;"/>
+        <img src="{% static 'core/awesome_tweet.jpg' %}" alt="logo" style="width:35px;height:35px;"/>
 
       </a>
     </div>
@@ -34,13 +33,13 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         
-        <li><a style="color:lightblue;">Welcome to Twit</a></li>
+        
         <ul class="nav navbar-nav navbar-right">
             {% if request.user.is_authenticated %}
-                <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
+                <li><a href="{% url 'accounts:logout' %}" class="btn btn-success btn-md">Logout</a></li>
             {% else %}
-                <li><a href="{% url 'accounts:login' %}">Login</a></li>
-                <li><a href="{% url 'accounts:register' %}">Sign Up</a></li>
+                <li><a href="{% url 'accounts:login' %}" class="btn btn-success btn-md">Login</a></li>
+                <li><a href="{% url 'accounts:register' %}" class="btn btn-success btn-md">Sign Up</a></li>
             {% endif %}
         </ul>
       </ul>
@@ -57,12 +56,10 @@
         {% block content %}
 
         {% endblock %}
-    
+    <hr>
     <footer class="page-footer">
         <hr>
-        <div class="container">
-            &copy; Anders Friis 2016
-        </div>
+        &copy; Anders Friis 2016
     </footer>
 
 

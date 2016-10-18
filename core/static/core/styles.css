@@ -8,3 +8,34 @@ form {
     color:grey;
 }
 
+.page-footer{
+    position: fixed;
+    bottom:15px;
+    margin-left: 550px
+    
+    
+}
+
+.jumbotron{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 250px;
+    margin-left: 250px;
+    color: black;
+    background-color: lightgrey;
+}
+
+.jumbotron-signup{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 350px;
+    margin-left: 350px;
+    color: black;
+    background-color: lightgrey;
+}
+
+
+img{
+    margin-left: 5px;
+}
+
