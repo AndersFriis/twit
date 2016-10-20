@@ -3,12 +3,15 @@
 {% block content %}
     <div class="jumbotron-signup">
         <h2>Please sign up</h2>
-        <form action="" method="post">
+        </div>
+
+<form action="" method="post">
             {% csrf_token %}
             {% for field in form %}
                 {% include "core/_form_input.html" %}
             {% endfor %}
+            <div class="signup">
             <button class="btn btn-primary" type="submit">Register</button>
-        </form>
-    </div> 
+        </form> 
+            </div>
 {% endblock content %}

@@ -8,6 +8,10 @@ form {
     color:grey;
 }
 
+.signup{
+    margin-left: 350px;
+}
+
 .page-footer{
     position: fixed;
     bottom:15px;
